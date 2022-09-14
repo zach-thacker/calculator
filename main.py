@@ -1,4 +1,6 @@
 import re
+from tkinter import Tk, Label
+
 
 
 def get_input():
@@ -61,7 +63,14 @@ def display_output(x):
         remove_zeros = re.sub(r"\.0+", "", x)
         x = remove_zeros
 
-    print(f"The output is {str(x)}")
+    # print(f"The output is {str(x)}")
+    root = Tk()
+    root.title("Zach's Calculator")
+
+    label = Label(root, text=f"The output is {str(x)}")
+    label.pack()
+
+    root.mainloop()
 
 
 def main_loop():
